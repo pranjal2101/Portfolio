@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Signika+Negative:300,400&display=swap");
+    *,
+    *:before,
+    *:after {
+        box-sizing: border-box;
+        position: relative;
+        letter-spacing: 0.04em;
+    }
+    
+    body {
+        font-family: "Signika Negative", sans-serif;
+        font-weight: 300;
+    }
+    
+    .section {
+        height: 100vh;
+        width: 100%;
+        position: relative;
+        padding: 0;
+        text-align: center;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .bg1 {
+        background-color: #ccc;
+    }
+    
+    .bg2 {
+        background-color: #333;
+    }
+    
+    h1 {
+        font-size: 40px;
+        line-height: 1.2;
+        margin: 0;
+    }
+    
+    .revealUp {
+        opacity: 0;
+        visibility: hidden;
+    }
+    
+    .spacer {
+        height: 50vh;
+        background-color: #000;
+    }
+</style>
+
+<body>
+    <div class="section">
+        <h1>Scroll Down</h1>
+    </div>
+
+    <div class="section bg1">
+        <h1 class="revealUp">Animation 1</h1>
+    </div>
+
+    <div class="section bg2">
+        <h1 class="revealUp">Animation 2</h1>
+    </div>
+
+    <div class="spacer"></div>
+
+
+
+
+
+    <!-- <div class="get-in-touch">
+        <h1 class="title">Contact Me</h1>
+        <div class="contact-con">
+            <div class="row contact-form">
+                <div class="form-field col-lg-6">
+                    <input type="text" class="in-text" id="name">
+                    <label for="name" class="label">name</label>
+                </div>
+                <div class="form-field col-lg-6">
+                    <input type="email" class="in-text" id="email">
+                    <label for="name" class="label">email</label>
+                </div>
+                <div class="form-field col-lg-6">
+                    <input type="text" class="in-text" id="subject">
+                    <label for="name" class="label">Subject</label>
+                </div>
+                <div class="form-field col-lg-6">
+                    <input type="text" class="in-text" id="message">
+                    <label for="name" class="label">message</label>
+                </div>
+                <div class="form-field col-lg-6">
+                    <input type="submit" value="submit" class="submit-btn">
+                </div>
+                
+            </div>
+        </div>
+
+        </div>
+        
+        
+        </div>
+    </div> -->
+    /* .get-in-touch { max-width: 80rem; margin: 5rem auto; position: relative; box-shadow: 0rem 1rem 3rem 0rem rgba(0, 0, 0, 0.1); padding: 3rem; } .get-in-touch .title { text-transform: uppercase; text-align: center; letter-spacing: 0.3rem; font-size: 2rem;
+    line-height: 10rem; padding-bottom: 2rem; color: #5543ca; background: linear-gradient(to right, #f4524d 0%, #5543ca 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; } */ .contact-form .form-field
+</body>
+
+<script>
+    gsap.registerPlugin(ScrollTrigger);
+    // REVEAL //
+    gsap.utils.toArray(".revealUp").forEach(function(elem) {
+        ScrollTrigger.create({
+            trigger: elem,
+            start: "top 80%",
+            end: "bottom 20%",
+            markers: true,
+            onEnter: function() {
+                gsap.fromTo(
+                    elem, {
+                        y: 100,
+                        autoAlpha: 0
+                    }, {
+                        duration: 1.25,
+                        y: 0,
+                        autoAlpha: 1,
+                        ease: "back",
+                        overwrite: "auto"
+                    }
+                );
+            },
+            onLeave: function() {
+                gsap.fromTo(elem, {
+                    autoAlpha: 1
+                }, {
+                    autoAlpha: 0,
+                    overwrite: "auto"
+                });
+            },
+            onEnterBack: function() {
+                gsap.fromTo(
+                    elem, {
+                        y: -100,
+                        autoAlpha: 0
+                    }, {
+                        duration: 1.25,
+                        y: 0,
+                        autoAlpha: 1,
+                        ease: "back",
+                        overwrite: "auto"
+                    }
+                );
+            },
+            onLeaveBack: function() {
+                gsap.fromTo(elem, {
+                    autoAlpha: 1
+                }, {
+                    autoAlpha: 0,
+                    overwrite: "auto"
+                });
+            }
+        });
+    });
+</script>
+
+</html>

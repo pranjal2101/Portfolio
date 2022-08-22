@@ -1,0 +1,428 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50rem;
+    }
+    
+    h1 {
+        font-family: tahoma;
+        font-size: 3rem;
+        font-weight: 100;
+        line-height: 1.5;
+        text-transform: uppercase;
+        white-space: nowrap;
+        overflow: hidden;
+        position: relative;
+        width: 55rem;
+    }
+    
+    h1 span {
+        font-size: 2rem;
+        margin-left: 5rem;
+    }
+    
+    .message {
+        background-color: yellow;
+        color: #333;
+        display: block;
+        font-weight: 900;
+        overflow: hidden;
+        position: absolute;
+        padding-left: 0.5rem;
+        top: 0.2rem;
+        left: 20rem;
+        animation: openclose 5s ease-in-out infinite;
+    }
+    
+    .word1,
+    .word2,
+    .word3 {
+        font-family: tahoma;
+    }
+    
+    @keyframes openclose {
+        0% {
+            top: 0.2rem;
+            width: 0;
+        }
+        5% {
+            width: 0;
+        }
+        15% {
+            width: 10rem;
+        }
+        30% {
+            top: 0.2rem;
+            width: 10rem;
+        }
+        33% {
+            top: 0.2rem;
+            width: 0;
+        }
+        35% {
+            top: 0.2rem;
+            width: 0;
+        }
+        38% {
+            top: -4.5rem;
+        }
+        48% {
+            top: -4.5rem;
+            width: 8rem;
+        }
+        62% {
+            top: -4.5rem;
+            width: 10rem;
+        }
+        66% {
+            top: -4.5rem;
+            width: 0;
+            text-indent: 0;
+        }
+        71% {
+            top: -9rem;
+            width: 0;
+        }
+        86% {
+            top: -9rem;
+            width: 15rem;
+        }
+        95% {
+            top: -9rem;
+            width: 19rem;
+        }
+        98% {
+            top: -9rem;
+            width: 0;
+            text-indent: 0;
+        }
+        100% {
+            top: 0;
+            width: 0;
+            text-indent: 0;
+        }
+    }
+</style>
+
+<body>
+    <div class="ani">
+        <h1>
+            <span>always be</span>
+            <div class="message">
+                <div class="word1">close</div>
+                <div class="word2">code</div>
+                <div class="word3">creating</div>
+            </div>
+        </h1>
+
+    </div>
+</body>
+
+</html> -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-size: 28px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        
+        .header {
+            background-color: #f1f1f1;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        #navbar {
+            overflow: hidden;
+            background-color: #333;
+        }
+        
+        #navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+        
+        #navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        
+        #navbar a.active {
+            background-color: #04AA6D;
+            color: white;
+        }
+        
+        .content {
+            padding: 16px;
+        }
+        
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+        
+        .sticky+.content {
+            padding-top: 60px;
+        }
+        
+        .skill {
+            margin: 5rem;
+        }
+        
+        .skill h3 {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .skl-cont {
+            width: 100%;
+            height: 100vh;
+            background: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .sk h2 {
+            font-weight: 400;
+            letter-spacing: 0.3rem;
+            margin-top: 2rem;
+            color: #fff;
+            font-size: 1.5rem;
+        }
+        
+        .progress-bar {
+            background: gray;
+            width: 50rem;
+            border-radius: 2rem;
+        }
+        
+        .progress-bar div {
+            height: 1rem;
+            border-radius: 2rem;
+            width: 50%;
+        }
+        
+        .progress-bar div span {
+            width: 4rem;
+            height: 4rem;
+            border-radius: 50%;
+            background: #222;
+            float: right;
+            margin-top: -1.5rem;
+            margin-right: -2rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .html {
+            background: #e91e63;
+            animation: html 1s linear forwards;
+        }
+        
+        .html span {
+            border: 1px solid #e01e63;
+        }
+        
+        .JavaScript {
+            background: #1ee91e;
+            animation: JavaScript 1s linear forwards;
+        }
+        
+        .JavaScript span {
+            border: 1px solid #1ee91e;
+        }
+        
+        .Python {
+            background: #1ee91e;
+            animation: Python 1s linear forwards;
+        }
+        
+        .Python span {
+            border: 1px solid #1ee91e;
+        }
+        
+        .ML {
+            background: #1ee91e;
+            animation: ML 1s linear forwards;
+        }
+        
+        .ML span {
+            border: 1px solid #1ee91e;
+        }
+        
+        @keyframes html {
+            100% {
+                width: 86%;
+            }
+        }
+        
+        @keyframes JavaScript {
+            100% {
+                width: 65%;
+            }
+        }
+        
+        @keyframes Python {
+            100% {
+                width: 70%;
+            }
+        }
+        
+        @keyframes ML {
+            100% {
+                width: 60%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <h2>Scroll Down</h2>
+        <p>Scroll down to see the sticky effect.</p>
+    </div>
+
+    <div id="navbar">
+        <a class="active" href="javascript:void(0)">Home</a>
+        <a href="javascript:void(0)">News</a>
+        <a href="javascript:void(0)">Contact</a>
+    </div>
+
+    <div class="content">
+        <h3>Sticky Navigation Example</h3>
+        <p>The navbar will stick to the top when you reach its scroll position.</p>
+        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint
+            efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint
+            efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint
+            efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint
+            efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint
+            efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint
+            efficiantur his ad. Eum no molestiae voluptatibus.</p>
+        <p>Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint
+            efficiantur his ad. Eum no molestiae voluptatibus.</p>
+    </div>
+    <div class="skill">
+        <h3>My Skills and Knowledge</h3>
+        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor, dolores neque accusamus mollitia sint, voluptate saepe quis dolorum enim expedita, corrupti aspernatur odit quas iste officia temporibus repellendus incidunt sed nisi porro. Reprehenderit
+            a aut, itaque quidem maiores architecto nesciunt?</p>
+        <!-- <div class="row">
+            <div class="col-6 sk-bar"></div>
+            
+            <div class="col-6 sk-bar">
+                <!-- <div class="skl-cont">
+                    <div class="sk">
+                        <h2>HTML & CSS</h2>
+                        <div class="progress-bar">
+                            <div class="html"><span>86%</span></div>
+                        </div>
+                        <h2>JavaScript</h2>
+                        <div class="progress-bar">
+                            <div class="JavaScript"><span>65%</span></div>
+                        </div>
+                        <h2>Python</h2>
+                        <div class="progress-bar">
+                            <div class="Python"><span>70%</span></div>
+                        </div>
+                        <h2>Machine Learning</h2>
+                        <div class="progress-bar">
+                            <div class="ML"><span>50%</span></div>
+                        </div>
+                    </div>
+                </div> -->
+        <!-- <div class="w3-container">
+                    <div class="w3-light-grey w3-round">
+                        <h5>hi</h5>
+                        <div class="w3-container w3-blue w3-round-xlarge" style="width:56%">25%</div>
+                    </div><br>
+                    <div class="w3-light-grey w3-round">
+                        <div class="w3-container w3-blue w3-round-xlarge" style="width:56%">25%</div>
+                    </div>
+                    <div class="w3-light-grey w3-round">
+                        <div class="w3-container w3-blue w3-round-xlarge" style="width:56%">25%</div>
+                    </div>
+                    <div class="w3-light-grey w3-round">
+                        <div class="w3-container w3-blue w3-round-xlarge" style="width:56%">25%</div>
+                    </div>
+                </div> -->
+    </div>
+    </div> -->
+    <div class="skl-cont">
+        <div class="sk">
+            <h2>HTML & CSS</h2>
+            <div class="progress-bar">
+                <div class="html"><span>86%</span></div>
+            </div>
+            <h2>JavaScript</h2>
+            <div class="progress-bar">
+                <div class="JavaScript"><span>65%</span></div>
+            </div>
+            <h2>Python</h2>
+            <div class="progress-bar">
+                <div class="Python"><span>70%</span></div>
+            </div>
+            <h2>Machine Learning</h2>
+            <div class="progress-bar">
+                <div class="ML"><span>60%</span></div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+
+
+
+
+    <script>
+        window.onscroll = function() {
+            myFunction()
+        };
+
+        var navbar = document.getElementById("navbar");
+        var sticky = navbar.offsetTop;
+
+        function myFunction() {
+            if (window.pageYOffset >= sticky) {
+                navbar.classList.add("sticky")
+            } else {
+                navbar.classList.remove("sticky");
+            }
+        }
+    </script>
+
+</body>
+
+</html>
